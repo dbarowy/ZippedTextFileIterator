@@ -1,5 +1,5 @@
 # ZippedTextFileIterator
-A simple (simplistic?) library for iterating over ZIP-compressed text files.
+A simple (simplistic?) library for iterating over ZIP-compressed text files one line at a time.
 
 ## Installation ##
 
