@@ -19,7 +19,11 @@ Then add the following to your `build.sbt`:
 libraryDependencies += "net.ettinsmoor" %% "zippedtextfileiterator" % "1.0-SNAPSHOT"
 ```
 
-Right now, only Scala 2.10 and 2.11 are supported.
+Right now, only Scala 2.10 and 2.11 are supported.  If you want to publish all versions available, do:
+
+```
+$ sbt "+ publish-local"
+```
 
 ## How to use ##
 
