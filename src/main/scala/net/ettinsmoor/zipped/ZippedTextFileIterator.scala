@@ -1,3 +1,5 @@
+package net.ettinsmoor.zipped
+
 import java.io.InputStream
 import java.util.zip.ZipFile
 
