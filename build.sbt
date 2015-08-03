@@ -1,5 +1,7 @@
 name := "zippedtextfileiterator"
 
+organization := "net.ettinsmoor"
+
 version := "1.0-SNAPSHOT"
 
 libraryDependencies ++= Seq(

@@ -16,7 +16,7 @@ $ sbt publish-local
 Then add the following to your `build.sbt`:
 
 ```
-libraryDependencies := "net.ettinsmoor" %% "zippedtextfileiterator" % "1.0"
+libraryDependencies += "net.ettinsmoor" %% "zippedtextfileiterator" % "1.0-SNAPSHOT"
 ```
 
 ## How to use ##
@@ -28,7 +28,6 @@ The following prints each line of the file `foo.txt` which is located inside the
 import net.ettinsmoor.zipped._
 
 val z = new ZippedTextFileIterator("file.zip", "foo.txt")
-
 z.foreach(println)
 
 ```
