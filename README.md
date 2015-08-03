@@ -52,7 +52,7 @@ z.foreach(println)
 If you're a functional programming purist, there's also an `Iterable` version:
 
 ```
-val z = new ZippedTextFileIterator("file.zip", "foo.txt")
+val z = new ZippedTextFileIterable("file.zip", "foo.txt")
 z.foreach(println)  // iterate first time
 z.foreach(println)  // iterate second time
 
