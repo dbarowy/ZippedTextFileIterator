@@ -44,3 +44,12 @@ val zip_name = getClass.getResource("/file.zip").getFile
 val z = new ZippedTextFileIterator(zip_name, "foo.txt")
 z.foreach(println)
 ```
+
+If you're a functional programming purist, there's also an `Iterable` version:
+
+```
+val z = new ZippedTextFileIterator("file.zip", "foo.txt")
+z.foreach(println)  // iterate first time
+z.foreach(println)  // iterate second time
+
+```

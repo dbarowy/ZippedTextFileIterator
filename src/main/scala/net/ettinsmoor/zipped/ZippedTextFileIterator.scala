@@ -20,6 +20,7 @@ class ZippedTextFileIterator(zipfilename: String, filename: String) extends Iter
   val zf: ZipFile = new ZipFile(zipfilename)
   val zfs: InputStream = zf.getInputStream(zf.getEntry(filename))
   var nb_opt: Option[Int] = None
+  var is_eof: Boolean = false
 
   def hasNext: Boolean = {
     nb_opt match {
@@ -37,6 +38,10 @@ class ZippedTextFileIterator(zipfilename: String, filename: String) extends Iter
   }
 
   def next(): String = {
+    if (is_eof) {
+      throw new NoSuchElementException()
+    }
+
     var done = false
 
     val sb = new StringBuilder
@@ -47,7 +52,8 @@ class ZippedTextFileIterator(zipfilename: String, filename: String) extends Iter
       token match {
         case NextIsChar(c) => sb.append(c); token = nextToken()
         case NextIsString(s) => sb.append(s); token = nextToken()
-        case _ => done = true
+        case NextIsNewline() => done = true
+        case NextIsEOF() => done = true; is_eof = true
       }
     }
 
